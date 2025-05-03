@@ -1,0 +1,2 @@
+MONGO_URI=mongodb+srv://cdiazmendez25:L96l5zZWnwscDduf@restaurantesapp.wtevlv2.mongodb.net/RestaurantesApp?retryWrites=true&w=majority&appName=RestaurantesApp
+JWT_SECRET=clave_super_secreta
