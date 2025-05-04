@@ -1,2 +1,0 @@
-# Backend-QuickEats
-Project backend

@@ -1,25 +1,31 @@
 const express = require('express');
-const router = express.Router();
-const bcrypt = require('bcrypt');
+const fs = require('fs');
 const jwt = require('jsonwebtoken');
-const User = require('../models/User');
+const path = require('path');
 
-router.post('/login', async (req, res) => {
-  const { email, password } = req.body;
+module.exports = function(JWT_SECRET) {
+  const router = express.Router();
 
-  const user = await User.findOne({ email });
-  if (!user) return res.status(401).json({ message: 'Invalid credentials' });
+  // Ruta de users.json
+  const usersPath = path.join(__dirname, '..', 'db', 'users.json');
 
-  const isMatch = await bcrypt.compare(password, user.password);
-  if (!isMatch) return res.status(401).json({ message: 'Invalid credentials' });
+  router.post('/login', (req, res) => {
+    const { email, password } = req.body;
 
-  const token = jwt.sign(
-    { id: user._id, role: user.role },
-    process.env.JWT_SECRET,
-    { expiresIn: '1h' }
-  );
+    const usersData = fs.readFileSync(usersPath, 'utf-8');
+    const users = JSON.parse(usersData);
 
-  res.json({ token });
-});
+    const user = users.find(u => u.email === email && u.password === password);
+    if (!user) return res.status(401).json({ message: 'Credenciales inválidas' });
 
-module.exports = router;
+    const token = jwt.sign(
+      { email: user.email, role: user.role },
+      JWT_SECRET,
+      { expiresIn: '1h' }
+    );
+
+    res.json({ token });
+  });
+
+  return router;
+};
