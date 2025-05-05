@@ -1,11 +1,26 @@
 const express = require('express');
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
+const fs = require('fs');
+const path = require('path');
 const app = express();
+require('dotenv').config();
 
-const JWT_SECRET = 'clave_super_secreta';
+const JWT_SECRET = process.env.JWT_SECRET || 'clave_super_secreta';
+const FRONTEND_URL = process.env.FRONTEND_URL || 'http://localhost:5173';
+const PORT = process.env.PORT || 3001;
 
-app.use(cors({ origin: 'http://localhost:5173' }));
+// Asegurar que la carpeta db exista
+const dbPath = path.join(__dirname, 'db');
+if (!fs.existsSync(dbPath)) {
+  fs.mkdirSync(dbPath);
+}
+
+// Configurar CORS para permitir solicitudes desde el frontend
+app.use(cors({ 
+  origin: [FRONTEND_URL, 'https://tu-frontend-url.vercel.app'],
+  credentials: true
+}));
 app.use(express.json());
 
 // Rutas de autenticación
@@ -42,5 +57,9 @@ app.get('/profile', verifyToken, (req, res) => {
   res.json({ user: req.user });
 });
 
-const PORT = 3001;
+// Ruta para verificar que el servidor está funcionando
+app.get('/', (req, res) => {
+  res.json({ message: 'API de QuickEats funcionando correctamente' });
+});
+
 app.listen(PORT, () => console.log(`🚀 Server running on http://localhost:${PORT}`));
