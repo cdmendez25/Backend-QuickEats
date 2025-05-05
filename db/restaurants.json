@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name": "Burger Palace",
+    "cuisine": "Comida Rápida",
+    "rating": 4.5,
+    "dishIds": [1, 2]
+  },
+  {
+    "id": 2,
+    "name": "Pizza Heaven",
+    "cuisine": "Italiana",
+    "rating": 4.2,
+    "dishIds": [3, 4]
+  }
+]

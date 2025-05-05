@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Hamburguesa Clásica",
+    "price": 25000,
+    "description": "Carne 100% res, queso cheddar y pan artesanal.",
+    "available": true
+  },
+  {
+    "id": 2,
+    "name": "Papas Fritas",
+    "price": 10000,
+    "description": "Papas crujientes con sal marina.",
+    "available": true
+  },
+  {
+    "id": 3,
+    "name": "Pizza Margarita",
+    "price": 35000,
+    "description": "Salsa de tomate, mozzarella y albahaca fresca.",
+    "available": true
+  },
+  {
+    "id": 4,
+    "name": "Lasagna",
+    "price": 28000,
+    "description": "Capas de pasta, carne y queso gratinado.",
+    "available": true
+  }
+]

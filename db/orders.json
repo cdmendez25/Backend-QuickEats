@@ -1,0 +1,107 @@
+[
+  {
+    "id": 1,
+    "cliente": "Carlos Díaz",
+    "total": 42000,
+    "estado": "Cancelado",
+    "fecha": "2023-11-15T14:30:00",
+    "items": [
+      {
+        "id": 1,
+        "name": "Hamburguesa Clásica",
+        "price": 25000,
+        "quantity": 1
+      },
+      {
+        "id": 2,
+        "name": "Papas Fritas",
+        "price": 10000,
+        "quantity": 1
+      },
+      {
+        "id": 3,
+        "name": "Pizza Margarita",
+        "price": 7000,
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "cliente": "Laura Rojas",
+    "total": 35000,
+    "estado": "Cancelado",
+    "fecha": "2023-11-15T15:45:00",
+    "items": [
+      {
+        "id": 3,
+        "name": "Pizza Margarita",
+        "price": 35000,
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "cliente": "Isabella Pérez",
+    "total": 28000,
+    "estado": "Cancelado",
+    "fecha": "2023-11-15T16:20:00",
+    "items": [
+      {
+        "id": 4,
+        "name": "Lasagna",
+        "price": 28000,
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "cliente": "Martín González",
+    "total": 60000,
+    "estado": "Cancelado",
+    "fecha": "2023-11-15T17:10:00",
+    "items": [
+      {
+        "id": 1,
+        "name": "Hamburguesa Clásica",
+        "price": 25000,
+        "quantity": 2
+      },
+      {
+        "id": 2,
+        "name": "Papas Fritas",
+        "price": 10000,
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "cliente": "Valentina Torres",
+    "total": 73000,
+    "estado": "Cancelado",
+    "fecha": "2023-11-15T18:30:00",
+    "items": [
+      {
+        "id": 3,
+        "name": "Pizza Margarita",
+        "price": 35000,
+        "quantity": 1
+      },
+      {
+        "id": 4,
+        "name": "Lasagna",
+        "price": 28000,
+        "quantity": 1
+      },
+      {
+        "id": 2,
+        "name": "Papas Fritas",
+        "price": 10000,
+        "quantity": 1
+      }
+    ]
+  }
+]
