@@ -62,4 +62,4 @@ app.get('/', (req, res) => {
   res.json({ message: 'API de QuickEats funcionando correctamente' });
 });
 
-app.listen(PORT, () => console.log(`🚀 Server running on http://localhost:${PORT}`));
+module.exports = app;
