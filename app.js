@@ -5,23 +5,18 @@ const fs = require('fs');
 const path = require('path');
 const app = express();
 require('dotenv').config();
-
+en
 const JWT_SECRET = process.env.JWT_SECRET || 'clave_super_secreta';
 const FRONTEND_URL = process.env.FRONTEND_URL || 'http://localhost:5173';
 const PORT = process.env.PORT || 3001;
 
-// Asegurar que la carpeta db exista
 const dbPath = path.join(__dirname, 'db');
 if (!fs.existsSync(dbPath)) {
   fs.mkdirSync(dbPath);
 }
 
-// Configurar CORS para permitir solicitudes desde el frontend
 const allowedOrigins = [ 
-  'http://localhost:5173', 
-  'https://frontend-quickeats.vercel.app', 
-  'https://frontend-quickeats-6j2pflc3f.vercel.app',
-  'https://frontend-quickeats-socilx0g9.vercel.app'
+  FRONTEND_URL
 ]; 
 
 app.use(cors({ 
@@ -40,19 +35,6 @@ app.use(cors({
 
 app.use(express.json());
 
-// Rutas de autenticación
-app.use('/auth', require('./routes/auth')(JWT_SECRET));
-
-// Rutas de restaurantes
-app.use('/restaurants', require('./routes/restaurants'));
-
-// Rutas de platos
-app.use('/dishes', require('./routes/dishes'));
-
-// Rutas de órdenes
-app.use('/orders', require('./routes/orders'));
-
-// Middleware para verificar token (para rutas protegidas)
 const verifyToken = (req, res, next) => {
   const token = req.headers.authorization?.split(' ')[1];
   
@@ -69,13 +51,11 @@ const verifyToken = (req, res, next) => {
   }
 };
 
-// Ejemplo de ruta protegida
-app.get('/profile', verifyToken, (req, res) => {
-  res.json({ user: req.user });
-});
+app.use('/auth', require('./routes/auth')(JWT_SECRET));
+app.use('/restaurants', verifyToken, require('./routes/restaurants'));
+app.use('/dishes', verifyToken, require('./routes/dishes'));
+app.use('/orders', verifyToken, require('./routes/orders'));
 
-// Ruta para verificar que el servidor está funcionando
-// Actualiza también la función test para mostrar todas las URLs permitidas
 app.get('/test', (req, res) => {
   res.json({ 
     message: 'API de QuickEats funcionando correctamente',
@@ -83,6 +63,10 @@ app.get('/test', (req, res) => {
     corsOrigins: allowedOrigins,
     requestOrigin: req.headers.origin || 'No origin header'
   });
+});
+
+app.get('/', (req, res) => {
+  res.send('Backend QuickEats funcionando');
 });
 
 module.exports = app;
