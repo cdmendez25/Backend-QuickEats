@@ -5,7 +5,7 @@ const fs = require('fs');
 const path = require('path');
 const app = express();
 require('dotenv').config();
-en
+
 const JWT_SECRET = process.env.JWT_SECRET || 'clave_super_secreta';
 const FRONTEND_URL = process.env.FRONTEND_URL || 'http://localhost:5173';
 const PORT = process.env.PORT || 3001;
