@@ -33,6 +33,7 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept'] 
 })); 
 
+app.options('*', cors());
 app.use(express.json());
 
 const verifyToken = (req, res, next) => {
