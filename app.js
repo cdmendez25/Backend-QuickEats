@@ -18,7 +18,7 @@ if (!fs.existsSync(dbPath)) {
 
 // Configurar CORS para permitir solicitudes desde el frontend
 app.use(cors({ 
-  origin: [FRONTEND_URL, 'https://frontend-quickeats.vercel.app'],  // Quitar la barra final
+  origin: [FRONTEND_URL, 'https://frontend-quickeats.vercel.app', 'https://frontend-quickeats-6j2pflc3f.vercel.app'],
   credentials: true
 }));
 app.use(express.json());
