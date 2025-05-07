@@ -19,21 +19,26 @@ const allowedOrigins = [
   FRONTEND_URL
 ]; 
 
-app.use(cors({ 
-  origin: function (origin, callback) { 
-    if (!origin || allowedOrigins.includes(origin)) { 
-      callback(null, true); 
-    } else { 
-      console.log('Origen bloqueado por CORS:', origin);
-      callback(new Error('Not allowed by CORS')); 
-    } 
-  }, 
-  credentials: true, 
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], 
-  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept'] 
-})); 
+const corsOptions = {
+  origin: function (origin, callback) {
+    const whitelist = [
+      'https://frontend-quickeats.vercel.app',
+      'http://localhost:5173'
+    ];
+    if (!origin || whitelist.includes(origin)) {
+      callback(null, true);
+    } else {
+      console.log('❌ Bloqueado por CORS:', origin);
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept']
+};
 
-app.options('*', cors());
+app.use(cors(corsOptions));
+app.options('*', cors(corsOptions));
 app.use(express.json());
 
 const verifyToken = (req, res, next) => {
