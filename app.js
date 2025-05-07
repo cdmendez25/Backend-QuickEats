@@ -20,7 +20,8 @@ if (!fs.existsSync(dbPath)) {
 const allowedOrigins = [ 
   'http://localhost:5173', 
   'https://frontend-quickeats.vercel.app', 
-  'https://frontend-quickeats-6j2pflc3f.vercel.app' 
+  'https://frontend-quickeats-6j2pflc3f.vercel.app',
+  'https://frontend-quickeats-socilx0g9.vercel.app'
 ]; 
 
 app.use(cors({ 
