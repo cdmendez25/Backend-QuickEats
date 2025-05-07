@@ -17,12 +17,25 @@ if (!fs.existsSync(dbPath)) {
 }
 
 // Configurar CORS para permitir solicitudes desde el frontend
+const allowedOrigins = [ 
+  'http://localhost:5173', 
+  'https://frontend-quickeats.vercel.app', 
+  'https://frontend-quickeats-6j2pflc3f.vercel.app' 
+]; 
+
 app.use(cors({ 
-  origin: ['http://localhost:5173', 'https://frontend-quickeats.vercel.app', 'https://frontend-quickeats-6j2pflc3f.vercel.app'],
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept']
-}));
+  origin: function (origin, callback) { 
+    if (!origin || allowedOrigins.includes(origin)) { 
+      callback(null, true); 
+    } else { 
+      console.log('Origen bloqueado por CORS:', origin);
+      callback(new Error('Not allowed by CORS')); 
+    } 
+  }, 
+  credentials: true, 
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], 
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept'] 
+})); 
 
 // Middleware para manejar solicitudes OPTIONS manualmente
 app.options('*', (req, res) => {
@@ -74,7 +87,8 @@ app.get('/test', (req, res) => {
   res.json({ 
     message: 'API de QuickEats funcionando correctamente',
     environment: process.env.NODE_ENV,
-    corsOrigins: ['http://localhost:5173', 'https://frontend-quickeats.vercel.app', 'https://frontend-quickeats-6j2pflc3f.vercel.app']
+    corsOrigins: allowedOrigins,
+    requestOrigin: req.headers.origin || 'No origin header'
   });
 });
 
