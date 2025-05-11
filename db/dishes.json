@@ -5,7 +5,11 @@
     "price": 25000,
     "description": "Carne 100% res, queso cheddar y pan artesanal.",
     "available": true,
-    "stock": 10
+    "stock": 10,
+    "comments": [
+      { "user": "laura.mendez@gmail.com", "text": "Muy jugosa y con excelente sabor, repetiría sin duda." },
+      { "user": "david.rojas@email.com", "text": "Buena combinación de ingredientes, pero llegó un poco fría." }
+    ]
   },
   {
     "id": 2,
@@ -13,7 +17,11 @@
     "price": 10000,
     "description": "Papas crujientes con sal marina.",
     "available": true,
-    "stock": 5
+    "stock": 5,
+    "comments": [
+      { "user": "sebastian.lopez@yahoo.com", "text": "Crocantes y bien sazonadas, 10/10." },
+      { "user": "juliana.ramirez@correo.com", "text": "Buena cantidad y sabor, pero podrían venir con salsa." }
+    ]
   },
   {
     "id": 3,
@@ -21,7 +29,11 @@
     "price": 35000,
     "description": "Salsa de tomate, mozzarella y albahaca fresca.",
     "available": true,
-    "stock": 1
+    "stock": 1,
+    "comments": [
+      { "user": "andres.quintero@hotmail.com", "text": "La masa estaba crujiente y la albahaca fresca, deliciosa." },
+      { "user": "camila.torres@gmail.com", "text": "Un clásico bien hecho, pero le faltó un poco más de queso." }
+    ]
   },
   {
     "id": 4,
@@ -29,6 +41,10 @@
     "price": 28000,
     "description": "Capas de pasta, carne y queso gratinado.",
     "available": true,
-    "stock": 12
+    "stock": 12,
+    "comments": [
+      { "user": "felipe.murcia@correo.com", "text": "Perfecta capa de queso gratinado, sabor casero increíble." },
+      { "user": "diana.sanchez@gmail.com", "text": "Muy rica, aunque un poco salada para mi gusto." }
+    ]
   }
 ]
