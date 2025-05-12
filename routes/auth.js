@@ -27,5 +27,20 @@ module.exports = function(JWT_SECRET) {
     res.json({ token });
   });
 
+  router.post('/reset-password', (req, res) => {
+    const {email} = req.body;
+    const usersPath= path.join(__dirname, '..', 'db', 'users.json');
+    const users= JSON.parse(fs.readFileSync(usersPath,'utf-8'))
+    const userIndex= users.findIndex(u=>u.email ===email);
+ 
+    if(userIndex===-1) {
+      return res.status(404).json({message:"Usuario no encontrado"});
+    }
+ 
+    users[userIndex].password=newPassword;
+    fs.writeFileSync(usersPath, JSON.stringify(users, null, 2), 'utf-8');
+    res.json({message: 'Contraseña actualizada correctamente'})
+  });
+
   return router;
 };
