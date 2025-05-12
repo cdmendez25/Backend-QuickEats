@@ -58,7 +58,7 @@ router.post('/', checkDataFile, (req, res) => {
   res.status(201).json(newDish);
 });
 
-// Actualizar un plato
+// ✅ Actualizar un plato (evitando modificar el ID)
 router.put('/:id', checkDataFile, (req, res) => {
   const data = JSON.parse(fs.readFileSync(dishesPath, 'utf-8'));
   const index = data.findIndex(d => d.id === parseInt(req.params.id));
@@ -67,13 +67,17 @@ router.put('/:id', checkDataFile, (req, res) => {
     return res.status(404).json({ message: 'Plato no encontrado' });
   }
 
+  const originalId = data[index].id;
+  const originalComments = data[index].comments;
+
   const updatedDish = {
-    ...data[index],
+    id: originalId,
     name: req.body.name,
     description: req.body.description,
     price: Number(req.body.price),
     stock: Number(req.body.stock),
-    available: req.body.available === true || req.body.available === 'yes'
+    available: req.body.available === true || req.body.available === 'yes',
+    comments: originalComments
   };
 
   data[index] = updatedDish;
