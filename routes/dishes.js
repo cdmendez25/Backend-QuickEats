@@ -58,7 +58,6 @@ router.post('/', checkDataFile, (req, res) => {
   res.status(201).json(newDish);
 });
 
-// ✅ Actualizar un plato (evitando modificar el ID)
 router.put('/:id', checkDataFile, (req, res) => {
   const data = JSON.parse(fs.readFileSync(dishesPath, 'utf-8'));
   const index = data.findIndex(d => d.id === parseInt(req.params.id));
@@ -67,17 +66,26 @@ router.put('/:id', checkDataFile, (req, res) => {
     return res.status(404).json({ message: 'Plato no encontrado' });
   }
 
-  const originalId = data[index].id;
-  const originalComments = data[index].comments;
+  const { name, description, price, stock, available } = req.body;
+
+  if (
+    typeof name !== 'string' ||
+    typeof description !== 'string' ||
+    typeof price !== 'number' ||
+    typeof stock !== 'number' ||
+    typeof available !== 'boolean'
+  ) {
+    console.error('❌ Datos inválidos en req.body:', req.body);
+    return res.status(400).json({ message: 'Datos inválidos en la solicitud' });
+  }
 
   const updatedDish = {
-    id: originalId,
-    name: req.body.name,
-    description: req.body.description,
-    price: Number(req.body.price),
-    stock: Number(req.body.stock),
-    available: req.body.available === true || req.body.available === 'yes',
-    comments: originalComments
+    ...data[index],
+    name,
+    description,
+    price,
+    stock,
+    available
   };
 
   data[index] = updatedDish;
