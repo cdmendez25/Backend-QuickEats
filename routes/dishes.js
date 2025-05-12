@@ -41,10 +41,15 @@ router.get('/:id', checkDataFile, (req, res) => {
 // Crear un nuevo plato
 router.post('/', checkDataFile, (req, res) => {
   const data = JSON.parse(fs.readFileSync(dishesPath, 'utf-8'));
+
   const newDish = {
     id: data.length > 0 ? Math.max(...data.map(d => d.id)) + 1 : 1,
-    comments: [],
-    ...req.body
+    name: req.body.name,
+    description: req.body.description,
+    price: Number(req.body.price),
+    stock: Number(req.body.stock),
+    available: req.body.available === true || req.body.available === 'yes',
+    comments: []
   };
 
   data.push(newDish);
@@ -53,7 +58,7 @@ router.post('/', checkDataFile, (req, res) => {
   res.status(201).json(newDish);
 });
 
-// ✅ Actualizar un plato (MODIFICADO)
+// Actualizar un plato
 router.put('/:id', checkDataFile, (req, res) => {
   const data = JSON.parse(fs.readFileSync(dishesPath, 'utf-8'));
   const index = data.findIndex(d => d.id === parseInt(req.params.id));
@@ -64,7 +69,8 @@ router.put('/:id', checkDataFile, (req, res) => {
 
   const updatedDish = {
     ...data[index],
-    ...req.body,
+    name: req.body.name,
+    description: req.body.description,
     price: Number(req.body.price),
     stock: Number(req.body.stock),
     available: req.body.available === true || req.body.available === 'yes'
