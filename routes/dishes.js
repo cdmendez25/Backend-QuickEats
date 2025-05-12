@@ -30,11 +30,11 @@ router.get('/', checkDataFile, (req, res) => {
 router.get('/:id', checkDataFile, (req, res) => {
   const data = JSON.parse(fs.readFileSync(dishesPath, 'utf-8'));
   const dish = data.find(d => d.id === parseInt(req.params.id));
-  
+
   if (!dish) {
     return res.status(404).json({ message: 'Plato no encontrado' });
   }
-  
+
   res.json(dish);
 });
 
@@ -46,43 +46,52 @@ router.post('/', checkDataFile, (req, res) => {
     comments: [],
     ...req.body
   };
-  
+
   data.push(newDish);
   fs.writeFileSync(dishesPath, JSON.stringify(data, null, 2));
-  
+
   res.status(201).json(newDish);
 });
 
-// Actualizar un plato
+// ✅ Actualizar un plato (MODIFICADO)
 router.put('/:id', checkDataFile, (req, res) => {
   const data = JSON.parse(fs.readFileSync(dishesPath, 'utf-8'));
   const index = data.findIndex(d => d.id === parseInt(req.params.id));
-  
+
   if (index === -1) {
     return res.status(404).json({ message: 'Plato no encontrado' });
   }
 
-  data[index] = { ...data[index], ...req.body };
+  const updatedDish = {
+    ...data[index],
+    ...req.body,
+    price: Number(req.body.price),
+    stock: Number(req.body.stock),
+    available: req.body.available === true || req.body.available === 'yes'
+  };
+
+  data[index] = updatedDish;
   fs.writeFileSync(dishesPath, JSON.stringify(data, null, 2));
-  
-  res.json(data[index]);
+
+  res.json(updatedDish);
 });
 
 // Eliminar un plato
 router.delete('/:id', checkDataFile, (req, res) => {
   const data = JSON.parse(fs.readFileSync(dishesPath, 'utf-8'));
   const index = data.findIndex(d => d.id === parseInt(req.params.id));
-  
+
   if (index === -1) {
     return res.status(404).json({ message: 'Plato no encontrado' });
   }
 
   const deletedDish = data.splice(index, 1)[0];
   fs.writeFileSync(dishesPath, JSON.stringify(data, null, 2));
-  
+
   res.json(deletedDish);
 });
 
+// Agregar comentario
 router.post('/:id/comments', checkDataFile, (req, res) => {
   const { user, text } = req.body;
 
