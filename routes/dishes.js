@@ -73,19 +73,19 @@ router.put('/:id', checkDataFile, (req, res) => {
     typeof description !== 'string' ||
     typeof price !== 'number' ||
     typeof stock !== 'number' ||
-    typeof available !== 'boolean'
+    !(available === true || available === false || available === 'true' || available === 'false')
   ) {
     console.error('❌ Datos inválidos en req.body:', req.body);
     return res.status(400).json({ message: 'Datos inválidos en la solicitud' });
   }
 
-  const updatedDish = {
+    const updatedDish = {
     ...data[index],
     name,
     description,
     price,
     stock,
-    available
+    available: available === true || available === 'true'
   };
 
   data[index] = updatedDish;
