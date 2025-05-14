@@ -59,6 +59,8 @@ router.post('/', checkDataFile, (req, res) => {
 });
 
 router.put('/:id', checkDataFile, (req, res) => {
+console.log('📥 Datos recibidos en req.body:', req.body);
+
   const data = JSON.parse(fs.readFileSync(dishesPath, 'utf-8'));
   const index = data.findIndex(d => d.id === parseInt(req.params.id));
 
