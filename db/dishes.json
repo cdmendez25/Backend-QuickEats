@@ -1,50 +1,578 @@
 [
   {
     "id": 1,
-    "name": "Hamburguesa Clásica",
-    "price": 25000,
-    "description": "Carne 100% res, queso cheddar y pan artesanal.",
+    "name": "Criollo",
+    "price": 24600,
+    "description": "Sandwich con sobrebarriga en salsa criolla, lechuga, tomate, maiz, platano maduro, aguacate y queso doble crema.",
     "available": true,
     "stock": 10,
     "comments": [
-      { "user": "laura.mendez@gmail.com", "text": "Muy jugosa y con excelente sabor, repetiría sin duda." },
-      { "user": "david.rojas@email.com", "text": "Buena combinación de ingredientes, pero llegó un poco fría." }
+      {
+        "user": "laura.mendez@gmail.com",
+        "text": "Un clásico bien hecho."
+      },
+      {
+        "user": "andres.quintero@hotmail.com",
+        "text": "El empaque podría mejorar, pero el sabor fue excelente."
+      }
     ]
   },
   {
     "id": 2,
-    "name": "Papas Fritas",
-    "price": 10000,
-    "description": "Papas crujientes con sal marina.",
+    "name": "Cochinita Pibil",
+    "price": 20200,
+    "description": "Sandwich con costillas de cerdo en salsa BBQ, platano maduro, lechuga, tomate, maiz, cebolla caramelizada y queso doble crema.",
     "available": true,
-    "stock": 5,
+    "stock": 8,
     "comments": [
-      { "user": "sebastian.lopez@yahoo.com", "text": "Crocantes y bien sazonadas, 10/10." },
-      { "user": "juliana.ramirez@correo.com", "text": "Buena cantidad y sabor, pero podrían venir con salsa." }
+      {
+        "user": "david.rojas@email.com",
+        "text": "Porción generosa y bien preparada."
+      },
+      {
+        "user": "diana.sanchez@gmail.com",
+        "text": "El empaque podría mejorar, pero el sabor fue excelente."
+      }
     ]
   },
   {
     "id": 3,
-    "name": "Pizza Margarita",
-    "price": 35000,
-    "description": "Salsa de tomate, mozzarella y albahaca fresca.",
+    "name": "Pork Ribs",
+    "price": 21100,
+    "description": "Sandwich con costillas de cerdo en salsa Teriyaki, platano maduro, piña bañada en panela, repollo y queso doble crema.",
     "available": true,
-    "stock": 1,
+    "stock": 9,
     "comments": [
-      { "user": "andres.quintero@hotmail.com", "text": "La masa estaba crujiente y la albahaca fresca, deliciosa." },
-      { "user": "camila.torres@gmail.com", "text": "Un clásico bien hecho, pero le faltó un poco más de queso." }
+      {
+        "user": "maria.garcia@gmail.com",
+        "text": "Textura perfecta y muy bien cocinado."
+      },
+      {
+        "user": "laura.mendez@gmail.com",
+        "text": "No fue lo que esperaba."
+      }
     ]
   },
   {
     "id": 4,
-    "name": "Lasagna",
-    "price": 28000,
-    "description": "Capas de pasta, carne y queso gratinado.",
+    "name": "Rostbeef Pimiento Moron",
+    "price": 17900,
+    "description": "Sandwich de roast beef con salsa de pimeinto moron, lechuga, tomates secos y queso chedar.",
+    "available": true,
+    "stock": 7,
+    "comments": [
+      {
+        "user": "maria.garcia@gmail.com",
+        "text": "Buen sabor pero esperaba algo más."
+      },
+      {
+        "user": "catalina.rivera@yahoo.com",
+        "text": "Excelente combinación de ingredientes."
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Honey Chicken",
+    "price": 20900,
+    "description": "Trozos de pollo marinados y empanizados, bañados en miel, acompañado de arroz, apio, zanahoria y raices chinas.",
+    "available": true,
+    "stock": 10,
+    "comments": [
+      {
+        "user": "catalina.rivera@yahoo.com",
+        "text": "No fue lo que esperaba."
+      },
+      {
+        "user": "maria.garcia@gmail.com",
+        "text": "Buen sabor pero esperaba algo más."
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Red Chicken Curry",
+    "price": 23500,
+    "description": "Salteado de verduras con pollo en salsa de curry, acompañado de arroz, zucchini verde y amarillo, zanahoria y guisantes.",
+    "available": true,
+    "stock": 6,
+    "comments": [
+      {
+        "user": "juliana.ramirez@correo.com",
+        "text": "Excelente combinación de ingredientes."
+      },
+      {
+        "user": "felipe.murcia@correo.com",
+        "text": "Buen sabor pero esperaba algo más."
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Arroz Frito",
+    "price": 19800,
+    "description": "Arroz salteado al wok con pollo, papa en cuadros, vegetales y aderezado con la salsa de la casa.",
     "available": true,
     "stock": 12,
     "comments": [
-      { "user": "felipe.murcia@correo.com", "text": "Perfecta capa de queso gratinado, sabor casero increíble." },
-      { "user": "diana.sanchez@gmail.com", "text": "Muy rica, aunque un poco salada para mi gusto." }
+      {
+        "user": "camila.torres@gmail.com",
+        "text": "Porción generosa y bien preparada."
+      },
+      {
+        "user": "sebastian.lopez@yahoo.com",
+        "text": "Un clásico bien hecho."
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Arroz Mandarin",
+    "price": 24500,
+    "description": "Arroz salteado al wok con camaron y jamon acompañado de vegetales y aderezado con la salsa de la casa.",
+    "available": true,
+    "stock": 9,
+    "comments": [
+      {
+        "user": "juliana.ramirez@correo.com",
+        "text": "El empaque podría mejorar, pero el sabor fue excelente."
+      },
+      {
+        "user": "david.rojas@email.com",
+        "text": "No fue lo que esperaba."
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Colombian Pork",
+    "price": 24900,
+    "description": "Costilla desmechada, platano maduro, zanahoria, aguacate, maiz, tomate y salsa chipotle.",
+    "available": true,
+    "stock": 8,
+    "comments": [
+      {
+        "user": "catalina.rivera@yahoo.com",
+        "text": "Me encantó, especialmente la salsa."
+      },
+      {
+        "user": "camila.torres@gmail.com",
+        "text": "El empaque podría mejorar, pero el sabor fue excelente."
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Poke Bowl",
+    "price": 24100,
+    "description": "Filete de pechuga en salsa teriyaki, piña, aguacate, espinaca salteada en aceite de ajonjoli y cebolla crispi.",
+    "available": true,
+    "stock": 10,
+    "comments": [
+      {
+        "user": "catalina.rivera@yahoo.com",
+        "text": "Excelente combinación de ingredientes."
+      },
+      {
+        "user": "oscar.mendoza@correo.com",
+        "text": "Buen sabor pero esperaba algo más."
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Fideos Cremosos",
+    "price": 27700,
+    "description": "Fideos cremosos acompañados de carne molida, champiñones, zucchini verde y amarillo, queso parmesano y perejil salteados en salsa blanca.",
+    "available": true,
+    "stock": 5,
+    "comments": [
+      {
+        "user": "camila.torres@gmail.com",
+        "text": "No fue lo que esperaba."
+      },
+      {
+        "user": "sebastian.lopez@yahoo.com",
+        "text": "Porción generosa y bien preparada."
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Bowl de Atun",
+    "price": 26900,
+    "description": "Atun mezclado con tomate, cilantro, mayonesa, reduccion de cebolla en vino tinto junto con maiz tierno y aguacate.",
+    "available": true,
+    "stock": 6,
+    "comments": [
+      {
+        "user": "juan.perez@hotmail.com",
+        "text": "Excelente combinación de ingredientes."
+      },
+      {
+        "user": "camila.torres@gmail.com",
+        "text": "Muy sabroso, repetiría sin dudar."
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Jambalaya",
+    "price": 41600,
+    "description": "Arroz salteado con carne de res, camarones, guisantes, champiñones, apio, parmesano, pimenton y crema de leche.",
+    "available": true,
+    "stock": 3,
+    "comments": [
+      {
+        "user": "diana.sanchez@gmail.com",
+        "text": "Excelente combinación de ingredientes."
+      },
+      {
+        "user": "david.rojas@email.com",
+        "text": "Buen sabor pero esperaba algo más."
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Lasagna de Platano",
+    "price": 36800,
+    "description": "Capas de finas laminas de platano maduro, salsa boloñesa y pollo en salsa bechamel.",
+    "available": true,
+    "stock": 7,
+    "comments": [
+      {
+        "user": "david.rojas@email.com",
+        "text": "Textura perfecta y muy bien cocinado."
+      },
+      {
+        "user": "catalina.rivera@yahoo.com",
+        "text": "Un poco salado para mi gusto."
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Plato ligero con carne",
+    "price": 29500,
+    "description": "180 gr de carne de res, acompañado de papas al vapor, con perejil, ensalada mix de lechuga, aguacate, tomate cherry y pepinillo encurtido.",
+    "available": true,
+    "stock": 4,
+    "comments": [
+      {
+        "user": "sebastian.lopez@yahoo.com",
+        "text": "Excelente combinación de ingredientes."
+      },
+      {
+        "user": "maria.garcia@gmail.com",
+        "text": "Un clásico bien hecho."
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Parmegiana de pollo",
+    "price": 33500,
+    "description": "200 gr de pechuga de pollo apanado, acompañada con ensalada de durazno, queso y almendras.",
+    "available": true,
+    "stock": 9,
+    "comments": [
+      {
+        "user": "juliana.ramirez@correo.com",
+        "text": "Delicioso, lo recomiendo totalmente."
+      },
+      {
+        "user": "catalina.rivera@yahoo.com",
+        "text": "Buen sabor pero esperaba algo más."
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Bistec a la parrilla",
+    "price": 22100,
+    "description": "Bistec de 180 gr cubierto con una deliciosa salsa criolla, huevo frito, acompañado de papas criollas y ensalada fresca.",
+    "available": true,
+    "stock": 10,
+    "comments": [
+      {
+        "user": "camila.torres@gmail.com",
+        "text": "Delicioso, lo recomiendo totalmente."
+      },
+      {
+        "user": "juan.perez@hotmail.com",
+        "text": "Un clásico bien hecho."
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Cerdo Agridulce",
+    "price": 25800,
+    "description": "Lomo de cerdo de 200 gr, caramelizado con salsa agridulce, acompañado de papas criollas y ensalada fresca de la casa.",
+    "available": true,
+    "stock": 7,
+    "comments": [
+      {
+        "user": "david.rojas@email.com",
+        "text": "Excelente combinación de ingredientes."
+      },
+      {
+        "user": "laura.mendez@gmail.com",
+        "text": "Llegó caliente y con buena presentación."
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Pepper Pork",
+    "price": 25400,
+    "description": "Hamburguesa de res de 150 gr, gratinada con queso doble crema y una lamina de chicharron, salsa de la casa, vegetales tatemados y papas a la francesa.",
+    "available": true,
+    "stock": 5,
+    "comments": [
+      {
+        "user": "catalina.rivera@yahoo.com",
+        "text": "Excelente combinación de ingredientes."
+      },
+      {
+        "user": "oscar.mendoza@correo.com",
+        "text": "Un clásico bien hecho."
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Tu Menu",
+    "price": 17300,
+    "description": "Milanesa de cerdo apanada y gratinada de 120 gr, adobada en cilantro, salsa napolitana, papas criollas y ensalada fresca de la casa.",
+    "available": true,
+    "stock": 6,
+    "comments": [
+      {
+        "user": "camila.torres@gmail.com",
+        "text": "Llegó caliente y con buena presentación."
+      },
+      {
+        "user": "oscar.mendoza@correo.com",
+        "text": "Muy sabroso, repetiría sin dudar."
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "name": "Mazorcada de Carne",
+    "price": 24900,
+    "description": "150 gr de carne de res a la plancha, con maiz, platano maduro, butifarra y gratinado en queso acompañado de crujiente viruta de papa.",
+    "available": true,
+    "stock": 5,
+    "comments": [
+      {
+        "user": "diana.sanchez@gmail.com",
+        "text": "Muy sabroso, repetiría sin dudar."
+      },
+      {
+        "user": "oscar.mendoza@correo.com",
+        "text": "Un poco salado para mi gusto."
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Hamburguesa Raptor",
+    "price": 24900,
+    "description": "150 gr de carne de res sobre lechuga y tomate, bañada en salsa agridulce con cerveza, vino tinto, jamon ahumado y cebolla.",
+    "available": true,
+    "stock": 7,
+    "comments": [
+      {
+        "user": "david.rojas@email.com",
+        "text": "No fue lo que esperaba."
+      },
+      {
+        "user": "camila.torres@gmail.com",
+        "text": "Buen sabor pero esperaba algo más."
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Especial de Carne",
+    "price": 22000,
+    "description": "Filete de cadera de 180 gr, acompañado de papas a la francesa, ensalada fresca y un vaso de te helado.",
+    "available": true,
+    "stock": 10,
+    "comments": [
+      {
+        "user": "maria.garcia@gmail.com",
+        "text": "Muy sabroso, repetiría sin dudar."
+      },
+      {
+        "user": "andres.quintero@hotmail.com",
+        "text": "Excelente combinación de ingredientes."
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "name": "Dorilocos",
+    "price": 22900,
+    "description": "Doritos con carne molida, salsa de birria, guacamole, queso campesino y pico de gallo con salsa de ajo.",
+    "available": true,
+    "stock": 4,
+    "comments": [
+      {
+        "user": "andres.quintero@hotmail.com",
+        "text": "Delicioso, lo recomiendo totalmente."
+      },
+      {
+        "user": "david.rojas@email.com",
+        "text": "Llegó caliente y con buena presentación."
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "name": "Granizado Kola Roman",
+    "price": 12000,
+    "description": "Bebida a base de hielo triturado y Kola Roman, puede llevar leche condensada.",
+    "available": true,
+    "stock": 15,
+    "comments": [
+      {
+        "user": "sebastian.lopez@yahoo.com",
+        "text": "Delicioso, lo recomiendo totalmente."
+      },
+      {
+        "user": "david.rojas@email.com",
+        "text": "No fue lo que esperaba."
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Latte 6 Oz",
+    "price": 8000,
+    "description": "Espresso suave combinado con leche, servido en porción pequeña de 6 Oz.",
+    "available": true,
+    "stock": 20,
+    "comments": [
+      {
+        "user": "diana.sanchez@gmail.com",
+        "text": "Delicioso, lo recomiendo totalmente."
+      },
+      {
+        "user": "laura.mendez@gmail.com",
+        "text": "El empaque podría mejorar, pero el sabor fue excelente."
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "name": "Pastel de Carne",
+    "price": 6500,
+    "description": "Mezcla de carne sazonada envuelta en masa de hojaldre crujiente.",
+    "available": true,
+    "stock": 25,
+    "comments": [
+      {
+        "user": "felipe.murcia@correo.com",
+        "text": "El empaque podría mejorar, pero el sabor fue excelente."
+      },
+      {
+        "user": "andres.quintero@hotmail.com",
+        "text": "Porción generosa y bien preparada."
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "name": "Alfajor",
+    "price": 7000,
+    "description": "Galletas suaves rellenas de arequipe y recubiertas de coco rallado.",
+    "available": true,
+    "stock": 18,
+    "comments": [
+      {
+        "user": "felipe.murcia@correo.com",
+        "text": "Textura perfecta y muy bien cocinado."
+      },
+      {
+        "user": "catalina.rivera@yahoo.com",
+        "text": "El empaque podría mejorar, pero el sabor fue excelente."
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "name": "Perro Mexicano",
+    "price": 14100,
+    "description": "Salchicha americana, queso campesino, maíz y guacamole.",
+    "available": true,
+    "stock": 12,
+    "comments": [
+      {
+        "user": "juliana.ramirez@correo.com",
+        "text": "Me encantó, especialmente la salsa."
+      },
+      {
+        "user": "sebastian.lopez@yahoo.com",
+        "text": "Excelente combinación de ingredientes."
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "name": "Croissant roast beef",
+    "price": 13800,
+    "description": "Croissant crujiente con roast beef y queso crema.",
+    "available": true,
+    "stock": 10,
+    "comments": [
+      {
+        "user": "david.rojas@email.com",
+        "text": "Delicioso, lo recomiendo totalmente."
+      },
+      {
+        "user": "laura.mendez@gmail.com",
+        "text": "Un clásico bien hecho."
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "name": "Croissant Nutella",
+    "price": 9300,
+    "description": "Croissant de Nutella con rodajas de banano y fresa.",
+    "available": true,
+    "stock": 10,
+    "comments": [
+      {
+        "user": "oscar.mendoza@correo.com",
+        "text": "Buen sabor pero esperaba algo más."
+      },
+      {
+        "user": "juan.perez@hotmail.com",
+        "text": "Me encantó, especialmente la salsa."
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "name": "Pizza Carbonara",
+    "price": 12500,
+    "description": "Pizza con base cremosa, mozzarella, panceta crujiente y pimienta negra.",
+    "available": true,
+    "stock": 8,
+    "comments": [
+      {
+        "user": "laura.mendez@gmail.com",
+        "text": "El empaque podría mejorar, pero el sabor fue excelente."
+      },
+      {
+        "user": "david.rojas@email.com",
+        "text": "Delicioso, lo recomiendo totalmente."
+      }
     ]
   }
 ]

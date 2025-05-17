@@ -1,16 +1,58 @@
 [
   {
     "id": 1,
-    "name": "Burger Palace",
+    "name": "Punto Sandwich",
     "cuisine": "Comida Rápida",
     "rating": 4.5,
-    "dishIds": [1, 2]
+    "dishIds": [1, 2, 3, 4]
   },
   {
     "id": 2,
-    "name": "Pizza Heaven",
-    "cuisine": "Italiana",
+    "name": "Punto Wok",
+    "cuisine": "Comida Asiatica",
     "rating": 4.2,
-    "dishIds": [3, 4]
+    "dishIds": [5, 6, 7, 8]
+  },
+  {
+    "id": 3,
+    "name": "Terraza Living",
+    "cuisine": "Comida Saludable",
+    "rating": 4.7,
+    "dishIds": [9, 10, 11, 12]
+  },
+  {
+    "id": 4,
+    "name": "Banderitas",
+    "cuisine": "Comida Gourmet",
+    "rating": 4.3,
+    "dishIds": [13, 14, 15, 16]
+  },
+  {
+    "id": 5,
+    "name": "Kioscos",
+    "cuisine": "Comida Parrilla",
+    "rating": 4.2,
+    "dishIds": [17, 18, 19, 20]
+  },
+  {
+    "id": 6,
+    "name": "Embarcadero Carta ",
+    "cuisine": "Comida Rápida",
+    "rating": 4.2,
+    "dishIds": [21, 22, 23, 24]
+  },
+  {
+    "id": 7,
+    "name": "Cafe Bolsa",
+    "cuisine": "Cafeteria",
+    "rating": 4.7,
+    "dishIds": [25, 26, 27, 28]
+  },
+  {
+    "id": 8,
+    "name": "Cipreses",
+    "cuisine": "Comida Rápida",
+    "rating": 4.0,
+    "dishIds": [29, 30, 31, 32]
   }
 ]
