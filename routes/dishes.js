@@ -68,7 +68,11 @@ console.log('📥 Datos recibidos en req.body:', req.body);
     return res.status(404).json({ message: 'Plato no encontrado' });
   }
 
-  const { name, description, price, stock, available } = req.body;
+  let { name, description, price, stock, available } = req.body;
+  price = parseFloat(price);
+  stock = parseInt(stock);
+  available = available === 'true' || available === true;
+
 
   if (
     typeof name !== 'string' ||

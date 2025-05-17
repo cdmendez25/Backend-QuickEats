@@ -76,3 +76,7 @@ app.get('/', (req, res) => {
 });
 
 module.exports = app;
+
+app.listen(PORT, () => {
+  console.log(`✅ Backend QuickEats escuchando en puerto ${PORT}`);
+});
