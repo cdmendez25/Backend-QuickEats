@@ -47,8 +47,11 @@ router.post('/', checkDataFile, (req, res) => {
   const data = JSON.parse(fs.readFileSync(ordersPath, 'utf-8'));
   const newOrder = {
     id: data.length > 0 ? Math.max(...data.map(o => o.id)) + 1 : 1,
-    ...req.body,
-    estado: 'Pendiente'
+    cliente: req.user?.email || 'cliente@desconocido.com',
+    total: req.body.total,
+    items: req.body.items,
+    estado: 'Pendiente',
+    fecha: new Date().toISOString()
   };
   
   data.push(newOrder);
