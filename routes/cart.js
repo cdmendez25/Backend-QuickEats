@@ -57,6 +57,26 @@ router.post('/checkout', (req, res) => {
   res.status(201).json({ message: 'Pedido confirmado', order: newOrder });
 });
 
+router.post('/', (req, res) => {
+  const { id, nombre, precio, cantidad } = req.body;
+
+  if (!id || !nombre || !precio || !cantidad) {
+    return res.status(400).json({ message: 'Faltan campos: id, nombre, precio o cantidad' });
+  }
+
+  const cart = readCart();
+
+  const existingItem = cart.find(item => item.id === id);
+  if (existingItem) {
+    existingItem.cantidad += cantidad;
+  } else {
+    cart.push({ id, nombre, precio, cantidad });
+  }
+
+  saveCart(cart);
+  res.status(201).json({ message: 'Producto agregado al carrito', cart });
+});
+
 router.delete('/:id', (req, res) => {
   const id = parseInt(req.params.id);
   let cart = readCart();
