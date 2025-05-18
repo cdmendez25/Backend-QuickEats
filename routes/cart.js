@@ -48,6 +48,19 @@ router.post('/checkout', (req, res) => {
     fecha: new Date().toISOString(),
     items
   };
+  const dishesPath = path.join(__dirname, '..', 'db', 'dishes.json');
+  const dishes = fs.existsSync(dishesPath)
+    ? JSON.parse(fs.readFileSync(dishesPath, 'utf8'))
+    : [];
+
+  newOrder.items.forEach(item => {
+    const index = dishes.findIndex(d => d.id === item.id);
+    if (index !== -1) {
+      dishes[index].stock = Math.max(dishes[index].stock - item.quantity, 0); // para que no quede negativo
+    }
+  });
+
+fs.writeFileSync(dishesPath, JSON.stringify(dishes, null, 2));
 
   existingOrders.push(newOrder);
   fs.writeFileSync(ordersPath, JSON.stringify(existingOrders, null, 2));
