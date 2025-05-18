@@ -61,6 +61,7 @@ app.use('/auth', require('./routes/auth')(JWT_SECRET));
 app.use('/restaurants', verifyToken, require('./routes/restaurants'));
 app.use('/dishes', verifyToken, require('./routes/dishes'));
 app.use('/orders', verifyToken, require('./routes/orders'));
+app.use('/cart', verifyToken, require('./routes/cart'));
 
 app.get('/test', (req, res) => {
   res.json({ 
