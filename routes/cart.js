@@ -32,14 +32,17 @@ router.post('/checkout', (req, res) => {
     : [];
 
   const items = cart.map(item => ({
-  id: item.id,
-  name: item.nombre,
-  price: item.precio,
-  quantity: item.cantidad
+    id: item.id,
+    name: item.nombre,
+    price: Number(item.precio),
+    quantity: Number(item.cantidad)
   }));
 
   const total = items.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
+  if (isNaN(total)) {
+    return res.status(500).json({ message: 'Error al calcular el total. Verifica los datos del carrito.' });
+  }
   const newOrder = {
     id: existingOrders.length > 0 ? Math.max(...existingOrders.map(o => o.id)) + 1 : 1,
     cliente: req.user?.email || 'cliente@desconocido.com',
