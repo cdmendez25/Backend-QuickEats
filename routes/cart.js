@@ -32,10 +32,10 @@ router.post('/checkout', (req, res) => {
     : [];
 
   const items = cart.map(item => ({
-    id: item.id,
-    name: item.nombre,
-    price: item.precio,
-    quantity: item.cantidad
+  id: item.id,
+  name: item.nombre,
+  price: item.precio,
+  quantity: item.cantidad
   }));
 
   const total = items.reduce((acc, item) => acc + item.price * item.quantity, 0);
